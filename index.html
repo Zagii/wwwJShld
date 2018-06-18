@@ -1,5 +1,14 @@
 <html>hello   !!!!
 <script>
+let mysql = require('mysql')
+let connection = mysql.createConnection({
+  host     : '10.22.23.82',
+  user     : 'eakzg',
+  password : 'a',
+  database : 'eakzg_schema'
+});
+
+let sql='PR-3911';
 function test()
 {
 	console.log("test");
@@ -12,15 +21,7 @@ function mysql()
 {
   
 				
-let mysql = require('mysql')
-let connection = mysql.createConnection({
-  host     : '10.22.23.82',
-  user     : 'eakzg',
-  password : 'a',
-  database : 'eakzg_schema'
-});
 
-let sql='PR-3911';
 
 let sql = "select  o.name as Pojęcie ,o.note as Opis from `"+
                 schema+"`.t_object o,  `"+schema+"`.t_package p where  p.Name='Słownik' and p.package_id=o.Package_ID";

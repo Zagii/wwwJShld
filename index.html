@@ -7,6 +7,35 @@ function test()
 	a.innetHtml=":)";
 	document.appendChild(a);
 }
+function mysql()
+{
+  
+				
+let mysql = require('mysql')
+let connection = mysql.createConnection({
+  host     : '10.22.23.82',
+  user     : 'eakzg',
+  password : 'a',
+  database : 'eakzg_schema'
+});
+
+let sql='PR-3911';
+
+let sql = "select  o.name as Pojęcie ,o.note as Opis from `"+
+                schema+"`.t_object o,  `"+schema+"`.t_package p where  p.Name='Słownik' and p.package_id=o.Package_ID";
+
+connection.connect()
+
+connection.query(sql, function (err, rows, fields) {
+  if (err) throw err
+
+  console.log('The solution is: ', rows[0].solution)
+  console.log(rows);
+})
+
+connection.end()
+
+}
 </script>
 <br>
 <button onclick="test()">btn</button>

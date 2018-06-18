@@ -2,9 +2,12 @@
 <script>
 function test()
 {
+	console.log("test");
 	let a=document.createElement("div");
 	a.innetHtml=":)";
+	document.appendChild(a);
 }
 </script>
-<button onclick='test'>btn</button>
+<br>
+<button onclick="test()">btn</button>
 </html>

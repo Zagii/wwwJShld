@@ -6,6 +6,7 @@ function test()
 	let a=document.createElement("div");
 	a.innetHtml=":)";
 	document.appendChild(a);
+	mysql();
 }
 function mysql()
 {
@@ -38,5 +39,8 @@ connection.end()
 }
 </script>
 <br>
+
 <button onclick="test()">btn</button>
+<div id='root'>
+</div>
 </html>
